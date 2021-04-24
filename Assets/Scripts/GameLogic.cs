@@ -10,6 +10,9 @@ public class GameLogic : Singleton<GameLogic>{
 
     public List<Fish> caughtFish = new List<Fish>(); 
 
+    public Fish[] fishes;
+    public Upgrade[] upgrades;
+
 
     public Action diveStarted;
     public Action diveEnded;
@@ -40,6 +43,9 @@ public class GameLogic : Singleton<GameLogic>{
     }
 
     void Start(){
+        fishes = Resources.LoadAll<Fish>("ScriptableObjects/Fish");
+        upgrades = Resources.LoadAll<Upgrade>("ScriptableObjects/Upgrades");
+        UILogic.instance.FillUpgrades();
         diveEnded += OnDiveStopped;
     }
 
@@ -69,14 +75,38 @@ public class GameLogic : Singleton<GameLogic>{
     void UseOxygen(){
         oxygen -= oxygenPerSecond * Time.deltaTime;
         if(oxygen <= 0f){
-            ResetRound(true);
+            Die();
 
         }
     }
 
-    void ResetRound(bool isPenalty){
+    void Die(){
         caughtFish = new List<Fish>();
         diveEnded?.Invoke();
+    }
+
+
+    public void TryToBuyUpgrade(UpgradeButton upgradeButton){
+        if(upgradeButton.linkedUpgrade.cost < money){
+            money -= upgradeButton.linkedUpgrade.cost;
+            ApplyUpgrade(upgradeButton.linkedUpgrade);
+            upgradeButton.UpgradeBought();
+        }
+    }
+
+
+// TODO this is where we left off WIP
+    void ApplyUpgrade(Upgrade upgrade){
+        switch(upgrade.upgradeType){
+            case UpgradeType.Weight:
+                break;
+            case UpgradeType.HookSize:
+                break;
+            case UpgradeType.OxygenTank:
+                break;
+            case UpgradeType.RopeLength:
+                break;
+        }
     }
 
 

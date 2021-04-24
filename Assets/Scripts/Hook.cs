@@ -9,6 +9,7 @@ public class Hook : Singleton<Hook> {
     Vector3 mousePos;
     Rigidbody2D rigidbody2D;
     SpriteRenderer spriteRenderer;
+    public LineRenderer ropeLineRenderer;
 
     Vector3 startPos;
 
@@ -24,6 +25,7 @@ public class Hook : Singleton<Hook> {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
+        ropeLineRenderer.enabled = false;
         startPos = transform.position;
     }
 
@@ -39,11 +41,13 @@ public class Hook : Singleton<Hook> {
 
     void OnStartedDiving(){
         spriteRenderer.enabled = true;
+        ropeLineRenderer.enabled = true;
         dormant = false;
     }
 
     void OnStoppedDiving(){
         spriteRenderer.enabled = false;
+        ropeLineRenderer.enabled = false;
         dormant = true;
         transform.position = startPos;
     }

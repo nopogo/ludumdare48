@@ -6,10 +6,14 @@ public class UILogic : Singleton<UILogic> {
 
     public Transform surfaceCanvas;
     public Transform diveCanvas;
+    public Transform upgradeGridParent;
+    public GameObject upgradeUIPrefab;
 
     public TMP_Text depthText;
     public TMP_Text oxygenText;
     public TMP_Text moneyText;
+
+    
 
 
     public override void Awake(){
@@ -28,6 +32,14 @@ public class UILogic : Singleton<UILogic> {
         GameLogic.instance.diveEnded   -= OnEndDive;
     }
 
+
+
+    public void FillUpgrades(){
+        foreach(Upgrade upgrade in GameLogic.instance.upgrades){
+            UpgradeButton upgradeButton = Instantiate(upgradeUIPrefab, upgradeGridParent).GetComponent<UpgradeButton>();
+            upgradeButton.Initiate(upgrade);
+        }
+    }
 
 
     public void PressDive(){

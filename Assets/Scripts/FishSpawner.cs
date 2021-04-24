@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FishSpawner : MonoBehaviour {
 
-    public ScriptableObject[] fishes;
+    
 
     public GameObject fishPrefab;
 
@@ -14,8 +14,6 @@ public class FishSpawner : MonoBehaviour {
     float waitTillNextFish = 1f;
 
     void Start() {
-
-        fishes = Resources.LoadAll<Fish>("ScriptableObjects/Fish");
         GameLogic.instance.diveStarted += OnDiveStarted;
         GameLogic.instance.diveEnded += OnDiveEnded;
     }
@@ -45,7 +43,7 @@ public class FishSpawner : MonoBehaviour {
 
     Fish GetFish(){
         List<Fish> tempFish = new List<Fish>();
-        foreach(Fish fish in fishes){
+        foreach(Fish fish in GameLogic.instance.fishes){
             if(GameLogic.instance.depth > fish.minDepth){
                 int totalChance = Mathf.FloorToInt(10f * fish.depthChance.Evaluate(GameLogic.instance.percentageDown));
                 for (int i = 0; i < totalChance; i++){
