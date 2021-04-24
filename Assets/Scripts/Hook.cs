@@ -8,9 +8,11 @@ public class Hook : Singleton<Hook> {
     Vector3 newHookPos;
     Vector3 mousePos;
     Rigidbody2D rigidbody2D;
+    SpriteRenderer spriteRenderer;
+
+    Vector3 startPos;
 
     public bool dormant = true;
-
 
     float zOffset;
     public float mouseForce = 1f;
@@ -20,6 +22,30 @@ public class Hook : Singleton<Hook> {
         mainCamera = Camera.main;
         zOffset = -mainCamera.transform.position.z;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
+        startPos = transform.position;
+    }
+
+    void Start(){
+        GameLogic.instance.diveStarted += OnStartedDiving;
+        GameLogic.instance.diveEnded += OnStoppedDiving;
+    }
+
+    void OnDisable(){
+        GameLogic.instance.diveStarted -= OnStartedDiving;
+        GameLogic.instance.diveEnded -= OnStoppedDiving;
+    }
+
+    void OnStartedDiving(){
+        spriteRenderer.enabled = true;
+        dormant = false;
+    }
+
+    void OnStoppedDiving(){
+        spriteRenderer.enabled = false;
+        dormant = true;
+        transform.position = startPos;
     }
 
     void Update(){
@@ -40,4 +66,7 @@ public class Hook : Singleton<Hook> {
         direction = newHookPos - transform.position;
         rigidbody2D.AddForce(direction * mouseForce);
     }
+
+
+    
 }

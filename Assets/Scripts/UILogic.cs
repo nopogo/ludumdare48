@@ -1,29 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class UILogic : MonoBehaviour {
+using UnityEngine;
+using TMPro;
+
+public class UILogic : Singleton<UILogic> {
 
     public Transform surfaceCanvas;
     public Transform diveCanvas;
 
+    public TMP_Text depthText;
+    public TMP_Text oxygenText;
+    public TMP_Text moneyText;
 
-    void Awake(){
+
+    public override void Awake(){
+        base.Awake();
         surfaceCanvas.gameObject.SetActive(true);
         diveCanvas.gameObject.SetActive(false);
+    }
+
+    void Start (){
+        GameLogic.instance.diveStarted += OnStartDive;
+        GameLogic.instance.diveEnded   += OnEndDive;
+    }
+
+    public void OnDisable(){
+        GameLogic.instance.diveStarted -= OnStartDive;
+        GameLogic.instance.diveEnded   -= OnEndDive;
     }
 
 
 
     public void PressDive(){
-        GameLogic.instance.StartDive();
+        GameLogic.instance.TriggerStartDive();
         surfaceCanvas.gameObject.SetActive(false);
+        
+    }
+
+    public void OnStartDive(){
         diveCanvas.gameObject.SetActive(true);
     }
 
 
-    public void GoUp(){
-        GameLogic.instance.GoUp();
+    void OnEndDive(){
         surfaceCanvas.gameObject.SetActive(true);
         diveCanvas.gameObject.SetActive(false);
     }
