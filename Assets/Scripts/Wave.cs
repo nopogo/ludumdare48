@@ -11,12 +11,11 @@ public class Wave : MonoBehaviour {
 
     float maxLifeTime = 60f;
 
-    float startLife;
+    float timePassed;
 
 
     void Awake(){
         speed = Random.Range(minSpeed, maxSpeed);
-        startLife = Time.time;
     }
 
 
@@ -28,7 +27,8 @@ public class Wave : MonoBehaviour {
         newPos.y = Mathf.Sin(Time.time * bobSpeed)*bobStrength;
         transform.position = newPos ;
 
-        if(startLife + Time.time > maxLifeTime){
+        timePassed += Time.deltaTime;
+        if(timePassed > maxLifeTime){
             Destroy(gameObject);
         }
     }

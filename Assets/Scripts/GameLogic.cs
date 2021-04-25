@@ -6,6 +6,7 @@ public class GameLogic : Singleton<GameLogic>{
     
     public Rigidbody submarineRigidbody;
     public ParticleSystem underwaterParticles;
+    public ParticleSystem underwaterUnlitParticles;
 
     public StudioEventEmitter splashEmitter;
 
@@ -140,6 +141,7 @@ public class GameLogic : Singleton<GameLogic>{
     void OnDiveStarted(){
         Settings.Reset();
         underwaterParticles.Play();
+        underwaterUnlitParticles.Play();
         ambiencePlayerBelowSurface.SetActive(true);
         ambiencePlayerAboveSurface.SetActive(false);
     }
@@ -151,6 +153,7 @@ public class GameLogic : Singleton<GameLogic>{
         submarineRigidbody.isKinematic = true;
         submarineRigidbody.transform.position = subStartPos;
         underwaterParticles.Stop();
+        underwaterUnlitParticles.Stop();
         ambiencePlayerBelowSurface.SetActive(false);
         ambiencePlayerAboveSurface.SetActive(true);
         CalculateProfit();
