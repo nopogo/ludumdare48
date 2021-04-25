@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 293357962}
   - component: {fileID: 293357961}
   - component: {fileID: 293357960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DestroyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1640,7 @@ GameObject:
   - component: {fileID: 1410306464}
   - component: {fileID: 1410306463}
   - component: {fileID: 1410306462}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 67
+    m_Bits: 3
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1896,7 +1896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674408174}
   - component: {fileID: 1674408173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FishSpawnBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2021,7 +2021,7 @@ GameObject:
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2600,10 +2600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7950,7 +7950,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 183
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -7991,7 +7991,7 @@ GameObject:
   - component: {fileID: 5528162998006430132}
   - component: {fileID: 5528162998006430133}
   - component: {fileID: 5528162998006430134}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
