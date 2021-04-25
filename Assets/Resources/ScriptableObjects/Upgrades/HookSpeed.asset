@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99de28082a4098d4a9bb4b8ade972602, type: 3}
-  m_Name: New Upgrade
+  m_Name: HookSpeed
   m_EditorClassIdentifier: 
-  verboseName: Hook Size +1
+  verboseName: Hook Speed +1
   sprite: {fileID: 21300000, guid: 8f75637cfb1a3514bafce1034ea2b9e1, type: 3}
   cost: 50
   valueChange: 1
-  upgradeType: 2
-  maxNumberPurchase: 1
+  upgradeType: 4
+  maxNumberPurchase: 5

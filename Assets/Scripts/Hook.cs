@@ -45,7 +45,7 @@ public class Hook : Singleton<Hook> {
         spriteRenderer.enabled = true;
         ropeLineRenderer.enabled = true;
         dormant = false;
-        transform.localScale = new Vector3(Settings.hookSize.currentAmount,Settings.hookSize.currentAmount, Settings.hookSize.currentAmount);
+        transform.localScale = new Vector3(Settings.hookSize.currentAmount, Settings.hookSize.currentAmount, Settings.hookSize.currentAmount);
     }
 
     void OnStoppedDiving(){

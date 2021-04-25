@@ -21,7 +21,7 @@ public class GameLogic : Singleton<GameLogic>{
     
     public float maxDepth = 10000f;
     public int money = 0;
-
+    float yLevelUnderwaterStart = 1f;
         
 
     public float percentageDown{
@@ -35,6 +35,7 @@ public class GameLogic : Singleton<GameLogic>{
 
     bool diveButtonPressed = false;
     bool didDiveStart = false;
+
 
     public override void Awake(){
         base.Awake();
@@ -57,7 +58,7 @@ public class GameLogic : Singleton<GameLogic>{
 
     void Update(){
         depth = -submarineRigidbody.transform.position.y;
-        if (depth < 0f){
+        if (depth < yLevelUnderwaterStart){
             return;
         }
         if(diveButtonPressed){
@@ -104,7 +105,6 @@ public class GameLogic : Singleton<GameLogic>{
         switch(upgrade.upgradeType){
             case UpgradeType.Weight:
                 Settings.subDrag.currentUpgradeAmount += upgrade.valueChange;
-                
                 break;
             case UpgradeType.HookSize:
                 Settings.hookSize.currentUpgradeAmount += upgrade.valueChange;
@@ -149,7 +149,7 @@ public class GameLogic : Singleton<GameLogic>{
         }
 
         caughtFish = new List<Fish>();
-        UILogic.instance.moneyText.text = $"{money} $"; 
+        UpdateMoneyUI();
     }
 
     void UpdateMoneyUI(){

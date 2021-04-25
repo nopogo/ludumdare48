@@ -7668,6 +7668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6947813014571993546, guid: 0049fd02726dbf0428e577f2bf4f9911, type: 3}
   spawnPlane: {fileID: 1674408173}
+  fishParent: {fileID: 0}
 --- !u!1 &2050917957
 GameObject:
   m_ObjectHideFlags: 0

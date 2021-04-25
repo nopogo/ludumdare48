@@ -7,9 +7,8 @@ public class FishSpawner : MonoBehaviour {
     
 
     public GameObject fishPrefab;
-
     public BoxCollider2D spawnPlane;
-
+    List<GameObject> spawnedFishList = new List<GameObject>();
 
     float waitTillNextFish = 1f;
 
@@ -31,6 +30,16 @@ public class FishSpawner : MonoBehaviour {
 
     void OnDiveEnded(){
         StopCoroutine(SpawnFish());
+        DeleteOldFish();
+    }
+
+
+    void DeleteOldFish(){
+        for (int i = spawnedFishList.Count - 1; i >= 0 ; i--){
+            GameObject temp = spawnedFishList[i];
+            spawnedFishList.RemoveAt(i);
+            Destroy(temp);
+        }
     }
 
     Vector3 GetSpawnPosition(){
@@ -62,6 +71,7 @@ public class FishSpawner : MonoBehaviour {
         Fish fishToSpawn = GetFish();
         if(fishToSpawn != null){
             GameObject spawnedFish = Instantiate(fishPrefab, GetSpawnPosition(), Quaternion.identity);
+            spawnedFishList.Add(spawnedFish);
             spawnedFish.GetComponent<SpriteRenderer>().sprite = fishToSpawn.sprite;
             BoxCollider2D boxColl = spawnedFish.AddComponent<BoxCollider2D>();
             boxColl.size = new Vector2(1,1);
