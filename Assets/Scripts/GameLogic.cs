@@ -21,7 +21,7 @@ public class GameLogic : Singleton<GameLogic>{
     
     public float maxDepth = 10000f;
     public int money = 0;
-    float yLevelUnderwaterStart = 1f;
+    float yLevelUnderwaterStart = 1.2f;
         
 
     public float percentageDown{
