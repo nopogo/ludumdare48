@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishObject : MonoBehaviour {
 
     public Fish fishType;
+    public Fish anglerFishType;
 
     float xDirection;
 
@@ -12,11 +13,17 @@ public class FishObject : MonoBehaviour {
 
     bool fishFinishedInitiation = false;
 
+    public GameObject lightObject;
+
     public void Initiate(Fish fishTypeVar){
         fishType = fishTypeVar;
         spriteRenderer = GetComponent<SpriteRenderer>();
         xDirection = Random.Range(-1f*fishType.maxSpeed, 1f*fishType.maxSpeed);
         fishFinishedInitiation = true;
+
+        if(fishType == anglerFishType){
+            lightObject.SetActive(true);
+        }
     }
 
     void Update(){
@@ -48,7 +55,11 @@ public class FishObject : MonoBehaviour {
     }
 
     void CheckFlip(){
-        spriteRenderer.flipX  = xDirection > 0;
+        if(xDirection > 0){
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }else{
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
     }
 
 
