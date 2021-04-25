@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class GameLogic : Singleton<GameLogic>{
     
     public Rigidbody submarineRigidbody;
     public ParticleSystem underwaterParticles;
+
+    public StudioEventEmitter splashEmitter;
 
     public GameObject ambiencePlayer;
 
@@ -60,6 +62,7 @@ public class GameLogic : Singleton<GameLogic>{
 
     void Update(){
         depth = -submarineRigidbody.transform.position.y;
+        
         if (depth < yLevelUnderwaterStart){
             return;
         }
@@ -87,6 +90,7 @@ public class GameLogic : Singleton<GameLogic>{
 
     void Die(){
         caughtFish = new List<Fish>();
+        FmodAudioTriggerManager.instance.PlayNegativeSound();
         diveEnded?.Invoke();
     }
 
@@ -94,6 +98,7 @@ public class GameLogic : Singleton<GameLogic>{
     public void TryToBuyUpgrade(UpgradeButton upgradeButton){
         if(upgradeButton.linkedUpgrade.cost <= money){
             money -= upgradeButton.linkedUpgrade.cost;
+            FmodAudioTriggerManager.instance.PlayCashSound();
             UpdateMoneyUI();
             ApplyUpgrade(upgradeButton.linkedUpgrade);
             upgradeButton.UpgradeBought();
@@ -144,6 +149,8 @@ public class GameLogic : Singleton<GameLogic>{
         submarineRigidbody.transform.position = subStartPos;
         underwaterParticles.Stop();
         ambiencePlayer.SetActive(false);
+        // splashEmitter.TriggerOnce = false;
+        // splashEmitter.TriggerOnce = true;
         CalculateProfit();
     }
 

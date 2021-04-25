@@ -38,6 +38,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-7899306577457235464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI Sounds/UI Hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI Sounds/UI Hover
+  guid: cf672dd0a43a584aa6fd5593bbdd37a7
+  Banks:
+  - {fileID: 1061744636114724518}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-6145217447091037290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +151,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 15535
+--- !u!114 &-3278636175380068284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI Sounds/UI Click
+  m_EditorClassIdentifier: 
+  Path: event:/UI Sounds/UI Click
+  guid: 4ec8c344d97fb74293af9a476e471888
+  Banks:
+  - {fileID: 1061744636114724518}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 62
 --- !u!114 &-3244450960169202237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +193,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-2910305532868126224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ETC/Above water Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/ETC/Above water Ambience
+  guid: be064a941ee96140ae1f1f9232b33e20
+  Banks:
+  - {fileID: 1061744636114724518}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 47473
 --- !u!114 &-1620777282195437448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +235,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-295471647006832857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ETC/Water Splash
+  m_EditorClassIdentifier: 
+  Path: event:/ETC/Water Splash
+  guid: ed2382a131215042a6a6095bea68f7dd
+  Banks:
+  - {fileID: 1061744636114724518}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2172
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,12 +279,18 @@ MonoBehaviour:
   - {fileID: 9077138041683760403}
   - {fileID: 6021995863496306789}
   - {fileID: -5130535462552107661}
+  - {fileID: 3010203518793756377}
+  - {fileID: -3278636175380068284}
+  - {fileID: 3590171908111800491}
+  - {fileID: -2910305532868126224}
+  - {fileID: -7899306577457235464}
+  - {fileID: -295471647006832857}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8289550785970788405}
   StringsBanks:
   - {fileID: 6723905657456200849}
-  stringsBankWriteTime: 637549596650219326
+  stringsBankWriteTime: 637549639799354073
   cacheVersion: 6
 --- !u!114 &1061744636114724518
 MonoBehaviour:
@@ -209,10 +307,56 @@ MonoBehaviour:
   Path: Assets/StreamableAssets/Build/Desktop/2D Sounds.bank
   Name: 2D Sounds
   StudioPath: bank:/2D Sounds
-  lastModified: 637549596650199374
+  lastModified: 637549639799274291
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &3010203518793756377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Actions/Negative Sound
+  m_EditorClassIdentifier: 
+  Path: event:/Game Actions/Negative Sound
+  guid: 21f5c697ff599f408a96ac751a916f4c
+  Banks:
+  - {fileID: 1061744636114724518}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 983
+--- !u!114 &3590171908111800491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI Sounds/Purchase
+  m_EditorClassIdentifier: 
+  Path: event:/UI Sounds/Purchase
+  guid: b05377fed2e8a94c93e8289043f5e940
+  Banks:
+  - {fileID: 1061744636114724518}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1446
 --- !u!114 &5826181238829907417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,11 +414,11 @@ MonoBehaviour:
   Path: Assets/StreamableAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637549596650219326
+  lastModified: 637549639799354073
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1076
+    Value: 1402
   Exists: 1
 --- !u!114 &9077138041683760403
 MonoBehaviour:
