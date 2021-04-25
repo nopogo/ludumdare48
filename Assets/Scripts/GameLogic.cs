@@ -13,7 +13,8 @@ public class GameLogic : Singleton<GameLogic>{
     public GameObject ambiencePlayerBelowSurface;
     public GameObject ambiencePlayerAboveSurface;
 
-    public GameObject[] surfaceOnlyObjects;
+    public Transform surfaceOnlyObjectParent;
+    public Transform belowOnlyObjectParent;
 
 
     public List<Fish> caughtFish = new List<Fish>(); 
@@ -58,6 +59,10 @@ public class GameLogic : Singleton<GameLogic>{
         UILogic.instance.FillUpgrades();
         diveEnded += OnDiveStopped;
         diveStarted += OnDiveStarted;
+
+        foreach(Transform t in belowOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
+            t.gameObject.SetActive(false);
+        }
     }
 
     void OnDisable(){
@@ -146,8 +151,11 @@ public class GameLogic : Singleton<GameLogic>{
         underwaterUnlitParticles.Play();
         ambiencePlayerBelowSurface.SetActive(true);
         ambiencePlayerAboveSurface.SetActive(false);
-        foreach(GameObject go in surfaceOnlyObjects){
-            go.SetActive(false);
+        foreach(Transform t in surfaceOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
+            t.gameObject.SetActive(false);
+        }
+        foreach(Transform t in belowOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
+            t.gameObject.SetActive(true);
         }
     }
 
@@ -162,8 +170,11 @@ public class GameLogic : Singleton<GameLogic>{
         underwaterUnlitParticles.Clear();
         ambiencePlayerBelowSurface.SetActive(false);
         ambiencePlayerAboveSurface.SetActive(true);
-        foreach(GameObject go in surfaceOnlyObjects){
-            go.SetActive(true);
+        foreach(Transform t in surfaceOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
+            t.gameObject.SetActive(true);
+        }
+        foreach(Transform t in belowOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
+            t.gameObject.SetActive(false);
         }
         CalculateProfit();
     }
