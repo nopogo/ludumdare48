@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AddOxygen
   m_EditorClassIdentifier: 
   verboseName: Oxygen
-  sprite: {fileID: 21300000, guid: 8f75637cfb1a3514bafce1034ea2b9e1, type: 3}
+  sprite: {fileID: 21300000, guid: 7db9b38e3cdd6ea43b8f497c4fab42df, type: 3}
   cost: 50
   valueChange: 20
   upgradeType: 1
