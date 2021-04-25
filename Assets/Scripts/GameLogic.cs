@@ -103,7 +103,8 @@ public class GameLogic : Singleton<GameLogic>{
     void ApplyUpgrade(Upgrade upgrade){
         switch(upgrade.upgradeType){
             case UpgradeType.Weight:
-                Settings.subWeight.currentUpgradeAmount += upgrade.valueChange;
+                Settings.subDrag.currentUpgradeAmount += upgrade.valueChange;
+                
                 break;
             case UpgradeType.HookSize:
                 Settings.hookSize.currentUpgradeAmount += upgrade.valueChange;

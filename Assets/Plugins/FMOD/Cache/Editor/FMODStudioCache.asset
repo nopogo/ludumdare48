@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/StreamableAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637548919010813368
+  lastModified: 637547013604765107
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Assets/StreamableAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637548919010813368
+  lastModified: 637547013604765107
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   Path: Assets/StreamableAssets/Build/Desktop/2D Sounds.bank
   Name: 2D Sounds
   StudioPath: bank:/2D Sounds
-  lastModified: 637548919010793425
+  lastModified: 637547013604745181
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: -3244450960169202237}
   StringsBanks:
   - {fileID: -6145217447091037290}
-  stringsBankWriteTime: 637548919010813368
+  stringsBankWriteTime: 637547013604765107
   cacheVersion: 6
 --- !u!114 &5826181238829907417
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   Path: Assets/StreamableAssets/Build/Desktop/3D Sounds.bank
   Name: 3D Sounds
   StudioPath: bank:/3D Sounds
-  lastModified: 637548919010803396
+  lastModified: 637547013604765107
   LoadResult: 0
   FileSizes: []
   Exists: 1

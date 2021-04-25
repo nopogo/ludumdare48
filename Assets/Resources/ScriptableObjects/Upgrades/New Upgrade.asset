@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99de28082a4098d4a9bb4b8ade972602, type: 3}
-  m_Name: AddWeight
+  m_Name: New Upgrade
   m_EditorClassIdentifier: 
-  verboseName: Weight +10
+  verboseName: Hook Size +1
   sprite: {fileID: 21300000, guid: 8f75637cfb1a3514bafce1034ea2b9e1, type: 3}
-  cost: 20
-  valueChange: -1
-  upgradeType: 0
-  maxNumberPurchase: 5
+  cost: 50
+  valueChange: 1
+  upgradeType: 2
+  maxNumberPurchase: 1
