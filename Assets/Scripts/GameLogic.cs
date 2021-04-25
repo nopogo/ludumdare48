@@ -7,6 +7,8 @@ public class GameLogic : Singleton<GameLogic>{
     public Rigidbody submarineRigidbody;
     public ParticleSystem underwaterParticles;
 
+    public GameObject ambiencePlayer;
+
 
     public List<Fish> caughtFish = new List<Fish>(); 
 
@@ -131,6 +133,7 @@ public class GameLogic : Singleton<GameLogic>{
     void OnDiveStarted(){
         Settings.Reset();
         underwaterParticles.Play();
+        ambiencePlayer.SetActive(true);
     }
 
 
@@ -140,6 +143,7 @@ public class GameLogic : Singleton<GameLogic>{
         submarineRigidbody.isKinematic = true;
         submarineRigidbody.transform.position = subStartPos;
         underwaterParticles.Stop();
+        ambiencePlayer.SetActive(false);
         CalculateProfit();
     }
 
