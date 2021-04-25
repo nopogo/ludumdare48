@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56beb73a0d202744a91ea83ae21dee4b, type: 3}
   m_Name: Carp
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 34099e46fe70fba4e8cd528e39349fab, type: 3}
+  sprite: {fileID: 21300000, guid: 21e3b3eeadf3c354c929e1853cee0b2d, type: 3}
   minDepth: 5
   depthChance:
     serializedVersion: 2
@@ -39,4 +39,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isNegative: 0
-  moneyAmount: 10
+  value: 10
+  maxSpeed: 5

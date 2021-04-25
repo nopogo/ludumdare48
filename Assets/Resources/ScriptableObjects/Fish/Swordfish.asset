@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56beb73a0d202744a91ea83ae21dee4b, type: 3}
   m_Name: Swordfish
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c6332c41464771347bd12ea7b04a58ff, type: 3}
+  sprite: {fileID: 21300000, guid: 029cdf90cbb2a8945ab2281aae106e5a, type: 3}
   minDepth: 5
   depthChance:
     serializedVersion: 2
@@ -39,4 +39,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isNegative: 0
-  moneyAmount: 10
+  value: 10
+  maxSpeed: 5

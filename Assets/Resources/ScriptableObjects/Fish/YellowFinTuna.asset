@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56beb73a0d202744a91ea83ae21dee4b, type: 3}
   m_Name: YellowFinTuna
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c8b47b04e768fed49888a6740aee8be4, type: 3}
+  sprite: {fileID: 21300000, guid: 3a67c540ed5889e4faf280299f9bdbfa, type: 3}
   minDepth: 5
   depthChance:
     serializedVersion: 2
@@ -39,4 +39,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isNegative: 0
-  moneyAmount: 10
+  value: 10
+  maxSpeed: 5

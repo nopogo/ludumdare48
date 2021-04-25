@@ -10,7 +10,7 @@ public class FishSpawner : MonoBehaviour {
     public BoxCollider2D spawnPlane;
     List<GameObject> spawnedFishList = new List<GameObject>();
 
-    float waitTillNextFish = 1f;
+    float startWaitUntillNextFish = 1f;
 
     void Start() {
         GameLogic.instance.diveStarted += OnDiveStarted;
@@ -54,8 +54,7 @@ public class FishSpawner : MonoBehaviour {
         List<Fish> tempFish = new List<Fish>();
         foreach(Fish fish in GameLogic.instance.fishes){
             if(GameLogic.instance.depth > fish.minDepth){
-                int totalChance = Mathf.FloorToInt(10f * fish.depthChance.Evaluate(GameLogic.instance.percentageDown));
-                for (int i = 0; i < totalChance; i++){
+                for (int i = 0; i < fish.spawnWeight; i++){
                     tempFish.Add(fish);
                 }
             }
@@ -67,7 +66,8 @@ public class FishSpawner : MonoBehaviour {
     }
 
     IEnumerator SpawnFish(){
-        yield return new WaitForSeconds(waitTillNextFish);
+        float waitUntillNextFish = startWaitUntillNextFish;
+        yield return new WaitForSeconds(waitUntillNextFish);
         Fish fishToSpawn = GetFish();
         if(fishToSpawn != null){
             GameObject spawnedFish = Instantiate(fishPrefab, GetSpawnPosition(), Quaternion.identity);

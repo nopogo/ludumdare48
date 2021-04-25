@@ -21,7 +21,7 @@ public class UpgradeButton : MonoBehaviour {
 
     public void Initiate(Upgrade upgrade){
         spriteRenderer.sprite = upgrade.sprite;
-        upgradeTitle.text = upgrade.verboseName;
+        upgradeTitle.text = $"{upgrade.verboseName} +{Mathf.Abs(upgrade.valueChange)}";
         cost.text = $"{upgrade.cost} $";
         linkedUpgrade = upgrade;
     }
