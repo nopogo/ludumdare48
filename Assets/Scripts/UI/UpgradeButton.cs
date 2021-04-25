@@ -13,6 +13,8 @@ public class UpgradeButton : MonoBehaviour {
 
     Button button;
 
+    int numberOfPurchases;
+
     void Awake(){
         button = GetComponent<Button>();
     }
@@ -31,6 +33,9 @@ public class UpgradeButton : MonoBehaviour {
     }
 
     public void UpgradeBought(){
-        button.interactable = false;
+        numberOfPurchases +=1;
+        if(numberOfPurchases >= linkedUpgrade.maxNumberPurchase){
+            button.interactable = false;
+        }
     }
 }

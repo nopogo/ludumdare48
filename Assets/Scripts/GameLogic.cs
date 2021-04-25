@@ -18,11 +18,11 @@ public class GameLogic : Singleton<GameLogic>{
     public Action diveEnded;
 
     public float depth  = 0f;
-    public float oxygen = 100f;    
+    
     public float maxDepth = 10000f;
     public int money = 0;
 
-    public float oxygenPerSecond = 1f; 
+        
 
     public float percentageDown{
         get{
@@ -47,10 +47,12 @@ public class GameLogic : Singleton<GameLogic>{
         upgrades = Resources.LoadAll<Upgrade>("ScriptableObjects/Upgrades");
         UILogic.instance.FillUpgrades();
         diveEnded += OnDiveStopped;
+        diveStarted += OnDiveStarted;
     }
 
     void OnDisable(){
         diveEnded -= OnDiveStopped;
+        diveStarted -= OnDiveStarted;
     }
 
     void Update(){
@@ -73,8 +75,8 @@ public class GameLogic : Singleton<GameLogic>{
     }
 
     void UseOxygen(){
-        oxygen -= oxygenPerSecond * Time.deltaTime;
-        if(oxygen <= 0f){
+        Settings.oxygen.currentAmount -= Settings.oxygenPerSecond.currentAmount * Time.deltaTime;
+        if(Settings.oxygen.currentAmount <= 0f){
             Die();
 
         }
@@ -87,24 +89,33 @@ public class GameLogic : Singleton<GameLogic>{
 
 
     public void TryToBuyUpgrade(UpgradeButton upgradeButton){
-        if(upgradeButton.linkedUpgrade.cost < money){
+        if(upgradeButton.linkedUpgrade.cost <= money){
             money -= upgradeButton.linkedUpgrade.cost;
+            UpdateMoneyUI();
             ApplyUpgrade(upgradeButton.linkedUpgrade);
             upgradeButton.UpgradeBought();
         }
     }
 
 
-// TODO this is where we left off WIP
+
+
     void ApplyUpgrade(Upgrade upgrade){
         switch(upgrade.upgradeType){
             case UpgradeType.Weight:
+                Settings.subWeight.currentUpgradeAmount += upgrade.valueChange;
                 break;
             case UpgradeType.HookSize:
+                Settings.hookSize.currentUpgradeAmount += upgrade.valueChange;
                 break;
             case UpgradeType.OxygenTank:
+                Settings.oxygen.currentUpgradeAmount += upgrade.valueChange;
                 break;
             case UpgradeType.RopeLength:
+                Settings.ropeLength.currentUpgradeAmount += upgrade.valueChange;
+                break;
+            case UpgradeType.HookSpeed:
+                Settings.hookSpeed.currentUpgradeAmount += upgrade.valueChange;
                 break;
         }
     }
@@ -116,8 +127,8 @@ public class GameLogic : Singleton<GameLogic>{
         diveButtonPressed = true;        
     }
 
-    void StartDive(){
-        diveStarted?.Invoke();
+    void OnDiveStarted(){
+        Settings.Reset();
         underwaterParticles.Play();
     }
 
@@ -125,7 +136,6 @@ public class GameLogic : Singleton<GameLogic>{
     void OnDiveStopped(){
         didDiveStart = false;
         depth = 0f;
-        oxygen = 100f;
         submarineRigidbody.isKinematic = true;
         submarineRigidbody.transform.position = subStartPos;
         underwaterParticles.Stop();
@@ -141,8 +151,12 @@ public class GameLogic : Singleton<GameLogic>{
         UILogic.instance.moneyText.text = $"{money} $"; 
     }
 
+    void UpdateMoneyUI(){
+        UILogic.instance.moneyText.text = $"{money} $"; 
+    }
+
     void UpdateUI(){
         uiLogic.depthText.text = $"{Mathf.Round(depth)} m";
-        uiLogic.oxygenText.text = $"{Mathf.Round(oxygen *10.0f)*0.1f} O2";
+        uiLogic.oxygenText.text = $"{Mathf.Round(Settings.oxygen.currentAmount * 10.0f)*0.1f} O2";
     }
 }

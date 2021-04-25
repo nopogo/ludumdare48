@@ -13,4 +13,5 @@ public class Upgrade : ScriptableObject {
     public int cost;
     public float valueChange;
     public UpgradeType upgradeType;
+    public int maxNumberPurchase = 1;
 }

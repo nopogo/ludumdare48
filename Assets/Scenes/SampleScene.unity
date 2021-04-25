@@ -7321,10 +7321,8 @@ MonoBehaviour:
   fishes: []
   upgrades: []
   depth: 0
-  oxygen: 100
   maxDepth: 10000
   money: 0
-  oxygenPerSecond: 1
 --- !u!114 &2018120449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7675,9 +7673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8057a73f26e5c84fbecd3cc3a8e1617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera2D: {fileID: 1410306464}
   ropeLineRenderer: {fileID: 1106594434}
+  ropeAttachment: {fileID: 1932192300}
   dormant: 1
-  mouseForce: 1
 --- !u!4 &5528162998006430141
 Transform:
   m_ObjectHideFlags: 0
@@ -7705,7 +7704,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0.22
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
