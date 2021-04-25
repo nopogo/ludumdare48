@@ -9,7 +9,8 @@ public class GameLogic : Singleton<GameLogic>{
 
     public StudioEventEmitter splashEmitter;
 
-    public GameObject ambiencePlayer;
+    public GameObject ambiencePlayerBelowSurface;
+    public GameObject ambiencePlayerAboveSurface;
 
 
     public List<Fish> caughtFish = new List<Fish>(); 
@@ -45,6 +46,7 @@ public class GameLogic : Singleton<GameLogic>{
         base.Awake();
         uiLogic = UILogic.instance;
         subStartPos = Sub.instance.transform.position;
+        ambiencePlayerAboveSurface.SetActive(true);
     }
 
     void Start(){
@@ -138,7 +140,8 @@ public class GameLogic : Singleton<GameLogic>{
     void OnDiveStarted(){
         Settings.Reset();
         underwaterParticles.Play();
-        ambiencePlayer.SetActive(true);
+        ambiencePlayerBelowSurface.SetActive(true);
+        ambiencePlayerAboveSurface.SetActive(false);
     }
 
 
@@ -148,9 +151,8 @@ public class GameLogic : Singleton<GameLogic>{
         submarineRigidbody.isKinematic = true;
         submarineRigidbody.transform.position = subStartPos;
         underwaterParticles.Stop();
-        ambiencePlayer.SetActive(false);
-        // splashEmitter.TriggerOnce = false;
-        // splashEmitter.TriggerOnce = true;
+        ambiencePlayerBelowSurface.SetActive(false);
+        ambiencePlayerAboveSurface.SetActive(true);
         CalculateProfit();
     }
 

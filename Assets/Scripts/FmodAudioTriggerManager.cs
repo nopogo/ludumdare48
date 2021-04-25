@@ -13,6 +13,7 @@ public class FmodAudioTriggerManager : Singleton<FmodAudioTriggerManager>{
 	FMOD.Studio.EventInstance cashSoundInstance;
 
 
+
     public override void Awake(){
         base.Awake();
         if( negativeSound   == null ){
