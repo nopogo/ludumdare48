@@ -13,6 +13,8 @@ public class GameLogic : Singleton<GameLogic>{
     public GameObject ambiencePlayerBelowSurface;
     public GameObject ambiencePlayerAboveSurface;
 
+    public GameObject[] surfaceOnlyObjects;
+
 
     public List<Fish> caughtFish = new List<Fish>(); 
 
@@ -144,6 +146,9 @@ public class GameLogic : Singleton<GameLogic>{
         underwaterUnlitParticles.Play();
         ambiencePlayerBelowSurface.SetActive(true);
         ambiencePlayerAboveSurface.SetActive(false);
+        foreach(GameObject go in surfaceOnlyObjects){
+            go.SetActive(false);
+        }
     }
 
 
@@ -154,8 +159,12 @@ public class GameLogic : Singleton<GameLogic>{
         submarineRigidbody.transform.position = subStartPos;
         underwaterParticles.Stop();
         underwaterUnlitParticles.Stop();
+        underwaterUnlitParticles.Clear();
         ambiencePlayerBelowSurface.SetActive(false);
         ambiencePlayerAboveSurface.SetActive(true);
+        foreach(GameObject go in surfaceOnlyObjects){
+            go.SetActive(true);
+        }
         CalculateProfit();
     }
 

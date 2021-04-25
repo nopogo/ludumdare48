@@ -36,7 +36,6 @@ public class WaveSpawner : MonoBehaviour {
 
     IEnumerator SpawnWave(){
         yield return new WaitForSeconds(Random.Range(minTimeBetweenWave, maxTimeBetweenWave));
-        Debug.Log("spawnnewWave");
         GameObject waveObject = Instantiate(wavePrefab, GetSpawnPosition(), Quaternion.identity, transform);
         SpriteRenderer spriteRenderer = waveObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = GetSprite();
