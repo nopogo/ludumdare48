@@ -69,6 +69,17 @@ public class Hook : Singleton<Hook> {
         }
         direction = newHookPos - transform.position;
         rigidbody2D.AddForce(direction * mouseForce);
+        VisualLogic();
+    }
+    float rotSpeed = 50f;
+    void VisualLogic(){
+
+        float heading = Mathf.Atan2(-rigidbody2D.velocity.x, -rigidbody2D.velocity.y);
+        transform.rotation *= Quaternion.Euler(0, 0, heading*Time.fixedDeltaTime * rotSpeed);
+        // Input.mousePosition()
+        // transform.LookAt(new Vector3(rigidbody2D.velocity.x, rigidbody2D.velocity.y, 0f));
+        // rigidbody2D.velocity
+        // rigidbody2D.MoveRotation(rigidbody2D.rotation - rotSpeed * Time.fixedDeltaTime);
     }
 
 

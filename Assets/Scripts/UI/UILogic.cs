@@ -9,6 +9,8 @@ public class UILogic : Singleton<UILogic> {
     public Transform upgradeGridParent;
     public GameObject upgradeUIPrefab;
 
+    public GameObject upgradePanel;
+
     public TMP_Text depthText;
     public TMP_Text oxygenText;
     public TMP_Text moneyText;
@@ -56,5 +58,6 @@ public class UILogic : Singleton<UILogic> {
     void OnEndDive(){
         surfaceCanvas.gameObject.SetActive(true);
         diveCanvas.gameObject.SetActive(false);
+        upgradePanel.SetActive(true);
     }
 }

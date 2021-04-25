@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public enum UpgradeType {Weight, OxygenTank, HookSize, RopeLength};
+public enum UpgradeType {Weight, OxygenTank, HookSize, RopeLength, HookSpeed};
 
 [CreateAssetMenu]
 public class Upgrade : ScriptableObject {

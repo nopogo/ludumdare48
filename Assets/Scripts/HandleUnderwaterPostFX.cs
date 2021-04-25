@@ -26,6 +26,7 @@ public class HandleUnderwaterPostFX : MonoBehaviour {
             transform.parent = mainCameraTransform;
         }else{
             transform.parent = originalParent;
+            transform.position = startPos;
         }
     }
 }
