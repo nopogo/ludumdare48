@@ -3,33 +3,49 @@ using UnityEngine;
 public class RockSpawner : MonoBehaviour {
 
     public Sprite startSprite;
+    public Sprite startTopSprite;
+    public Sprite startBottomSprite;
 
     public Sprite[] rockVariationSprites;
+    public Sprite[] top;
+    public Sprite[] bottom;
 
 
     public GameObject rockFacePrefab;
 
-    float nextDepthSpawn = 20f;
+
+
+    float nextDepthSpawn = 30f;
     bool firstSpawn = true;
 
+    float rockSpawnDistance = 14f;
+    float rockOutofScreenDistance = 30f;
+ 
     void Update(){
-        if(GameLogic.instance.depth > nextDepthSpawn){
+        if(GameLogic.instance.depth + rockOutofScreenDistance > nextDepthSpawn){
             SpawnRockFace();
-            nextDepthSpawn += 20f;
+            nextDepthSpawn += rockSpawnDistance;
         }
     }
 
 
 
     void SpawnRockFace(){
+
         // lastDepthSpawned = 
-        SpriteRenderer tempSpriteRenderer = Instantiate(rockFacePrefab, transform).GetComponent<SpriteRenderer>();
+        SpriteRenderer[] spriteRendererArray = Instantiate(rockFacePrefab, transform).GetComponentsInChildren<SpriteRenderer>();
         if(firstSpawn){
-            tempSpriteRenderer.sprite = startSprite;
+            
+            spriteRendererArray[0].sprite = startSprite;
+            spriteRendererArray[1].sprite = startTopSprite;
+            spriteRendererArray[2].sprite = startBottomSprite;
         }else{
-            tempSpriteRenderer.sprite = rockVariationSprites[Random.Range(0, rockVariationSprites.Length)];
+            int index = Random.Range(0, rockVariationSprites.Length);
+            spriteRendererArray[0].sprite = rockVariationSprites[index];
+            spriteRendererArray[1].sprite = top[index];
+            spriteRendererArray[2].sprite = bottom[index];
         }
-        tempSpriteRenderer.transform.position = new Vector3(0f, nextDepthSpawn, 0f);
+        spriteRendererArray[0].transform.position = new Vector3(0f, -nextDepthSpawn, 0f);
         firstSpawn = false;
         
     }

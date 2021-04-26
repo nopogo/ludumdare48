@@ -17,6 +17,7 @@ public class GameLogic : Singleton<GameLogic>{
     public Material skyboxMaterial;
 
     public Light[] spotLights;
+    public Light2D[] spotLights2D;
 
     public StudioEventEmitter splashEmitter;
 
@@ -25,6 +26,8 @@ public class GameLogic : Singleton<GameLogic>{
 
     public Transform surfaceOnlyObjectParent;
     public Transform belowOnlyObjectParent;
+
+    public GameObject topRope;
 
 
     public List<Fish> caughtFish = new List<Fish>(); 
@@ -68,6 +71,9 @@ public class GameLogic : Singleton<GameLogic>{
         subStartPos = Sub.instance.transform.position;
         ambiencePlayerAboveSurface.SetActive(true);
         foreach(Light light in spotLights){
+            light.enabled=false;
+        }
+        foreach(Light2D light in spotLights2D){
             light.enabled=false;
         }
     }
@@ -178,8 +184,9 @@ public class GameLogic : Singleton<GameLogic>{
 
 
     public void TriggerStartDive(){
-        submarineRigidbody.isKinematic = false;        
+        submarineRigidbody.isKinematic = false;    
         diveButtonPressed = true;        
+        topRope.SetActive(false);
     }
 
     void OnDiveStarted(){
@@ -195,6 +202,9 @@ public class GameLogic : Singleton<GameLogic>{
             t.gameObject.SetActive(true);
         }
         foreach(Light light in spotLights){
+            light.enabled=true;
+        }
+        foreach(Light2D light in spotLights2D){
             light.enabled=true;
         }
     }
@@ -220,6 +230,10 @@ public class GameLogic : Singleton<GameLogic>{
         foreach(Light light in spotLights){
             light.enabled=false;
         }
+        foreach(Light2D light in spotLights2D){
+            light.enabled=false;
+        }
+        topRope.SetActive(true);
         CalculateProfit();
     }
 
