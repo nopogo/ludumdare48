@@ -241,7 +241,7 @@ Transform:
   - {fileID: 1670493982}
   - {fileID: 1254238109}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &61975288 stripped
 Transform:
@@ -719,8 +719,9 @@ Transform:
   - {fileID: 771567046}
   - {fileID: 743160066}
   - {fileID: 778429403}
+  - {fileID: 630186159}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138512566
 PrefabInstance:
@@ -6342,7 +6343,7 @@ Transform:
   - {fileID: 1951597455}
   - {fileID: 1674688046}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491479360
 GameObject:
@@ -6427,7 +6428,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &518750649
 MonoBehaviour:
@@ -6795,6 +6796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   negativeSound: event:/Game Actions/Negative Sound
   cashSound: event:/UI Sounds/Purchase
+  bombSound: event:/Game Actions/Explosion
 --- !u!1 &594514787
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,14 +7077,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630186158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 878027474}
   - {fileID: 1159805775}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 126253101}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &630186160
 MonoBehaviour:
@@ -10887,7 +10889,7 @@ Transform:
   - {fileID: 399355942}
   - {fileID: 2022758853}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1579581931
 Rigidbody:
@@ -18679,7 +18681,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5670825935099319203
 Rigidbody2D:

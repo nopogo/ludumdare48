@@ -140,7 +140,9 @@ public class GameLogic : Singleton<GameLogic>{
     }
 
     public void Bomb(){
+        Debug.Log("boom");
         FmodAudioTriggerManager.instance.PlayBombSound();
+        // yield return new WaitForSeconds(FmodAudioTriggerManager.instance.bombSoundInstance.GEtLe)
         Die();
     }
 

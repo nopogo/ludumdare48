@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7941266629010554359}
   - component: {fileID: 5319310421621377341}
   - component: {fileID: 4665097602310076362}
+  - component: {fileID: 2872841851340563043}
   m_Layer: 0
   m_Name: LD48_Mine
   m_TagString: Mine
@@ -98,3 +99,15 @@ CircleCollider2D:
   m_Offset: {x: 0.000037908554, y: -0.00003790856}
   serializedVersion: 2
   m_Radius: 1.3406237
+--- !u!114 &2872841851340563043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967551898023700712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6464a304edf275245a1e852a91393e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

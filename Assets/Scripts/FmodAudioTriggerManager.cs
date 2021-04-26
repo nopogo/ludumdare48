@@ -15,7 +15,7 @@ public class FmodAudioTriggerManager : Singleton<FmodAudioTriggerManager>{
 
     [EventRef]
     public string bombSound;
-	FMOD.Studio.EventInstance bombSoundInstance;
+	public FMOD.Studio.EventInstance bombSoundInstance;
 
 
 
@@ -35,6 +35,9 @@ public class FmodAudioTriggerManager : Singleton<FmodAudioTriggerManager>{
     
         cashSoundInstance = RuntimeManager.CreateInstance(cashSound);
         cashSoundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
+
+        bombSoundInstance = RuntimeManager.CreateInstance(bombSound);
+        bombSoundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
 
     }
 

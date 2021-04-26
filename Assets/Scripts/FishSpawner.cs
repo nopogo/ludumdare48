@@ -77,8 +77,8 @@ public class FishSpawner : MonoBehaviour {
 
         yield return new WaitForSeconds(startWaitUntillNextFish);
         Fish fishToSpawn = GetFish();
-        if(Settings.bombDelay > Time.time - timeLastBombSpawned){
-           spawnedBombs.Add(Instantiate(bomb, GetSpawnPosition(), Quaternion.identity));
+        if(Settings.bombDelay < Time.time - timeLastBombSpawned){
+           spawnedBombs.Add(Instantiate(bomb, GetSpawnPosition(), Quaternion.Euler(new Vector3(-90f, 0f, 0f))));
            timeLastBombSpawned = Time.time;
         }else{
             if(fishToSpawn != null){
