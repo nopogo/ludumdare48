@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verboseName: Weight
   sprite: {fileID: 21300000, guid: 5a5a19c754befe041a881f220c6bfa1c, type: 3}
-  cost: 20
+  cost: 100
   valueChange: -1
   upgradeType: 0
   maxNumberPurchase: 5

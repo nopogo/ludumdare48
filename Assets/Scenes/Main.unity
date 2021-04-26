@@ -241,7 +241,7 @@ Transform:
   - {fileID: 1670493982}
   - {fileID: 1254238109}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &61975288 stripped
 Transform:
@@ -686,7 +686,7 @@ Transform:
   - {fileID: 2138677393}
   - {fileID: 1186597027}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126253100
 GameObject:
@@ -721,7 +721,7 @@ Transform:
   - {fileID: 778429403}
   - {fileID: 630186159}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138512566
 PrefabInstance:
@@ -932,11 +932,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1366579469}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -956,7 +956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -964,7 +964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6343,7 +6343,7 @@ Transform:
   - {fileID: 1951597455}
   - {fileID: 1674688046}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491479360
 GameObject:
@@ -6428,7 +6428,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &518750649
 MonoBehaviour:
@@ -6519,7 +6519,7 @@ Transform:
   - {fileID: 606984389}
   - {fileID: 1254215957}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557698357
 GameObject:
@@ -6780,7 +6780,7 @@ Transform:
   - {fileID: 984002395}
   - {fileID: 491479361}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &577739911
 MonoBehaviour:
@@ -10138,8 +10138,9 @@ Transform:
   - {fileID: 61975288}
   - {fileID: 53967894}
   - {fileID: 556723769}
+  - {fileID: 1931502110}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1372465050
 PrefabInstance:
@@ -10889,7 +10890,7 @@ Transform:
   - {fileID: 399355942}
   - {fileID: 2022758853}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1579581931
 Rigidbody:
@@ -12429,6 +12430,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905439583}
   m_CullTransparentMesh: 1
+--- !u!4 &1931502110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be85b363cb241684b812370e2e8c5bc8, type: 3}
+  m_PrefabInstance: {fileID: 175218553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1932192297
 GameObject:
   m_ObjectHideFlags: 0
@@ -18681,7 +18687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5670825935099319203
 Rigidbody2D:

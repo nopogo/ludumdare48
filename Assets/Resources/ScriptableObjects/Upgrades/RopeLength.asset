@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verboseName: Rope
   sprite: {fileID: 21300000, guid: 5ae18aae238f9cd45be7431b95c6e8a9, type: 3}
-  cost: 10
+  cost: 50
   valueChange: 1
   upgradeType: 3
   maxNumberPurchase: 5

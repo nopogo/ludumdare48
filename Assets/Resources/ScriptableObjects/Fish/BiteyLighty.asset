@@ -17,5 +17,5 @@ MonoBehaviour:
   maxDepth: 0
   spawnWeight: 1
   isNegative: 0
-  value: 10
-  maxSpeed: 5
+  value: 200
+  maxSpeed: 8

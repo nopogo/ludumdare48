@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verboseName: Hook Speed
   sprite: {fileID: 21300000, guid: 51db62ba6e621714f9d7abfcc5e60266, type: 3}
-  cost: 50
+  cost: 80
   valueChange: 1
   upgradeType: 4
   maxNumberPurchase: 5

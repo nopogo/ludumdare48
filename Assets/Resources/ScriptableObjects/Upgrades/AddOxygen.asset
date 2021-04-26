@@ -15,6 +15,6 @@ MonoBehaviour:
   verboseName: Oxygen
   sprite: {fileID: 21300000, guid: 7db9b38e3cdd6ea43b8f497c4fab42df, type: 3}
   cost: 50
-  valueChange: 20
+  valueChange: 10
   upgradeType: 1
-  maxNumberPurchase: 5
+  maxNumberPurchase: 10

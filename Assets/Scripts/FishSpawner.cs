@@ -46,6 +46,11 @@ public class FishSpawner : MonoBehaviour {
             spawnedFishList.RemoveAt(i);
             Destroy(temp);
         }
+        for (int i = spawnedBombs.Count - 1; i >= 0 ; i--){
+            GameObject temp = spawnedBombs[i];
+            spawnedBombs.RemoveAt(i);
+            Destroy(temp);
+        }
     }
 
     Vector3 GetSpawnPosition(){
