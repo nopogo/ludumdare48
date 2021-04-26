@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364491559}
   - component: {fileID: 364491560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 6947813014571993544}
   - component: {fileID: -404529473725643932}
   - component: {fileID: -6551645139575638890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FishPrefab
   m_TagString: Fish
   m_Icon: {fileID: 0}
