@@ -67,7 +67,6 @@ public class FishSpawner : MonoBehaviour {
     }
 
     IEnumerator SpawnFish(){
-        Debug.Log("try to spawn fish");
         SpawnDepthDelay depthDelay = Settings.GetSpawnDepthDelay(GameLogic.instance.depth);
         startWaitUntillNextFish = Random.Range(depthDelay.waitInSecondsMin, depthDelay.waitInSecondsMax);
 
