@@ -51,6 +51,14 @@ public static class Settings {
     public static float yLevelUnderwaterStart = 1.2f;
 
 
+    public static int depthValue   = 0;
+    public static int fishValue    = 0;
+    public static int moneyValue   = 0;
+    public static int upgradeValue = 0;
+    public static int diveValue    = 0;
+    public static int failedValue  = 0;
+
+
     public static List<SpawnDepthDelay> spawnDepthDelayLookupList = new List<SpawnDepthDelay>(){
         new SpawnDepthDelay(20f, 4f, 8f),
         new SpawnDepthDelay(50f, 3f, 5f),

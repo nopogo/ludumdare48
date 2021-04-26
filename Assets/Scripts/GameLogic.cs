@@ -140,6 +140,7 @@ public class GameLogic : Singleton<GameLogic>{
     }
 
     void Die(){
+        Settings.failedValue +=1;
         caughtFish = new List<Fish>();
         FmodAudioTriggerManager.instance.PlayNegativeSound();
         diveEnded?.Invoke();
@@ -162,6 +163,7 @@ public class GameLogic : Singleton<GameLogic>{
 
 
     void ApplyUpgrade(Upgrade upgrade){
+        Settings.upgradeValue +=1;
         switch(upgrade.upgradeType){
             case UpgradeType.Weight:
                 Settings.subDrag.currentUpgradeAmount += upgrade.valueChange;
@@ -190,6 +192,7 @@ public class GameLogic : Singleton<GameLogic>{
     }
 
     void OnDiveStarted(){
+        Settings.diveValue +=1;
         Settings.Reset();
         underwaterParticles.Play();
         underwaterUnlitParticles.Play();
@@ -213,6 +216,7 @@ public class GameLogic : Singleton<GameLogic>{
     void OnDiveStopped(){
         ResetLightingEffects();
         didDiveStart = false;
+        Settings.depthValue += Mathf.FloorToInt(depth);
         depth = 0f;
         submarineRigidbody.isKinematic = true;
         submarineRigidbody.transform.position = subStartPos;
@@ -239,7 +243,10 @@ public class GameLogic : Singleton<GameLogic>{
 
     void CalculateProfit(){
         foreach(Fish fish in caughtFish){
+            Settings.fishValue  += 1;
+            Settings.moneyValue += fish.value;
             money += fish.value;
+
         }
 
         caughtFish = new List<Fish>();

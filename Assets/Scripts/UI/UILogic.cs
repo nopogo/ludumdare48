@@ -17,6 +17,13 @@ public class UILogic : Singleton<UILogic> {
 
     public Canvas scoreCanvas;
 
+    public TMP_Text depthValue;
+    public TMP_Text fishValue;
+    public TMP_Text moneyValue;
+    public TMP_Text upgradeValue;
+    public TMP_Text diveValue;
+    public TMP_Text failedValue;
+
 
 
     public override void Awake(){
@@ -45,6 +52,13 @@ public class UILogic : Singleton<UILogic> {
 
 
     public void PressQuit(){
+        depthValue.text   = Settings.depthValue.ToString();
+        fishValue.text    = Settings.fishValue.ToString();
+        moneyValue.text   = Settings.moneyValue.ToString();
+        upgradeValue.text = Settings.upgradeValue.ToString();
+        diveValue.text    = Settings.diveValue.ToString();
+        failedValue.text  = Settings.failedValue.ToString();
+
         scoreCanvas.gameObject.SetActive(true);
         surfaceCanvas.gameObject.SetActive(false);
         upgradePanel.SetActive(false);
