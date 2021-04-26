@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BiteyLighty
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: add83cab7ac32124397e610c2df3a430, type: 3}
-  minDepth: 0
+  minDepth: 200
+  maxDepth: 0
   spawnWeight: 1
   isNegative: 0
   value: 10

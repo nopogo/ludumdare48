@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Bita
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e198f9a2bdeb355448324491e09f6116, type: 3}
-  minDepth: 10
+  minDepth: 200
+  maxDepth: 0
   spawnWeight: 1
   isNegative: 0
   value: 100

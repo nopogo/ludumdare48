@@ -11,8 +11,8 @@ public class WaveSpawner : MonoBehaviour {
 
     BoxCollider boundingCollider;
 
-    float minTimeBetweenWave = 1f;
-    float maxTimeBetweenWave = 5f;
+    float minTimeBetweenWave = 3f;
+    float maxTimeBetweenWave = 8f;
 
     public bool flipTheX = false;
 

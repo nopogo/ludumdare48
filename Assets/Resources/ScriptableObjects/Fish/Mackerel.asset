@@ -13,31 +13,9 @@ MonoBehaviour:
   m_Name: Mackerel
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 559aa4409e7bb3542ac1d09b3ad603e7, type: 3}
-  minDepth: 5
-  depthChance:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0020179749
-      value: 0.19895935
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.99609035
-      value: 0.7693212
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  minDepth: 30
+  maxDepth: 200
+  spawnWeight: 1
   isNegative: 0
   value: 10
   maxSpeed: 5

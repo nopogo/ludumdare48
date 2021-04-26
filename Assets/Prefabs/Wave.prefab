@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1578547345256611016}
   - component: {fileID: 7158001630942441618}
   - component: {fileID: -7584725008238893062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,9 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd24487db7b7f6443b7c7ba528c2edf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 3
-  maxSpeed: 7
-  bobStrength: 1
 --- !u!50 &-7584725008238893062
 Rigidbody2D:
   serializedVersion: 4

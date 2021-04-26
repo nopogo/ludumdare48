@@ -9,7 +9,7 @@ public class Wave : MonoBehaviour {
     float bobStrength = .2f;
     float bobSpeed = 3f;
 
-    float maxLifeTime = 60f;
+    float maxLifeTime = 20f;
 
     float timePassed;
 

@@ -16,6 +16,8 @@ public class GameLogic : Singleton<GameLogic>{
     public Light2D directionalLight2D;
     public Material skyboxMaterial;
 
+    public Light[] spotLights;
+
     public StudioEventEmitter splashEmitter;
 
     public GameObject ambiencePlayerBelowSurface;
@@ -65,6 +67,9 @@ public class GameLogic : Singleton<GameLogic>{
         uiLogic = UILogic.instance;
         subStartPos = Sub.instance.transform.position;
         ambiencePlayerAboveSurface.SetActive(true);
+        foreach(Light light in spotLights){
+            light.enabled=false;
+        }
     }
 
     void Start(){
@@ -189,6 +194,9 @@ public class GameLogic : Singleton<GameLogic>{
         foreach(Transform t in belowOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
             t.gameObject.SetActive(true);
         }
+        foreach(Light light in spotLights){
+            light.enabled=true;
+        }
     }
 
 
@@ -208,6 +216,9 @@ public class GameLogic : Singleton<GameLogic>{
         }
         foreach(Transform t in belowOnlyObjectParent.GetComponentsInChildren<Transform>(true)){
             t.gameObject.SetActive(false);
+        }
+        foreach(Light light in spotLights){
+            light.enabled=false;
         }
         CalculateProfit();
     }

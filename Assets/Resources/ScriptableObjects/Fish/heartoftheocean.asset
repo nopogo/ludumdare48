@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: heartoftheocean
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d4871d0f215dec44a822c5548e7bdb21, type: 3}
-  minDepth: 5000
+  minDepth: 500
+  maxDepth: 0
   spawnWeight: 1
   isNegative: 0
   value: 10
