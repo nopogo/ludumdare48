@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.191
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.0041150046, g: 0.005324261, b: 0.016261252, a: 0.191}
+  m_IndirectSpecularColor: {r: 0.0022486844, g: 0.0029094338, b: 0.008886021, a: 0.191}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -302,6 +302,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: dd7105e077158574c8ca8e584223449f, type: 3}
       propertyPath: m_Name
       value: DustCloud2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: dd7105e077158574c8ca8e584223449f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7105e077158574c8ca8e584223449f, type: 3}
@@ -5922,7 +5926,7 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 0
+  m_PointLightInnerAngle: 42
   m_PointLightOuterAngle: 113
   m_PointLightInnerRadius: 2.11
   m_PointLightOuterRadius: 9.8
@@ -6307,6 +6311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DustCloud4
       objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
 --- !u!4 &960535765 stripped
@@ -6539,6 +6547,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
       propertyPath: m_Name
       value: DustCloud3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
@@ -7311,15 +7323,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -323.3
+      value: 74.3
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -64.5
+      value: -113.2
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 179
+      value: 113.7
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7352,6 +7364,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_Name
       value: DustCloud4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
@@ -7416,7 +7432,7 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 0
+  m_PointLightInnerAngle: 42
   m_PointLightOuterAngle: 113
   m_PointLightInnerRadius: 2.11
   m_PointLightOuterRadius: 9.8
@@ -8217,11 +8233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: 141
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -76
+      value: -106
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8259,6 +8275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DustCloud3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ebcf30e9e54695428f155a616bef832, type: 3}
 --- !u!4 &1595723341 stripped
@@ -8278,24 +8298,32 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 81.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 52.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 183.6
+      value: 199.2
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -64.5
+      value: -75.7
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 284.1
+      value: 248.7
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.9996805
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.025274878
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalRotation.y
@@ -8307,7 +8335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 362.897
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -8320,6 +8348,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
       propertyPath: m_Name
       value: DustCloud4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120fe167f6bbbf445abddfd43a415876, type: 3}
@@ -8736,6 +8768,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: f0c6f0cb4a3b64149b581fdba8fa47ae, type: 3}
       propertyPath: m_Name
       value: DustCloud1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: f0c6f0cb4a3b64149b581fdba8fa47ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c6f0cb4a3b64149b581fdba8fa47ae, type: 3}
@@ -9395,6 +9431,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: f0c6f0cb4a3b64149b581fdba8fa47ae, type: 3}
       propertyPath: m_Name
       value: DustCloud1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: f0c6f0cb4a3b64149b581fdba8fa47ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c6f0cb4a3b64149b581fdba8fa47ae, type: 3}
@@ -14388,6 +14428,9 @@ MonoBehaviour:
   submarineRigidbody: {fileID: 1579581931}
   underwaterParticles: {fileID: 2010074579}
   underwaterUnlitParticles: {fileID: 399355944}
+  directionalLight: {fileID: 2138677392}
+  directionalLight2D: {fileID: 1186597026}
+  skyboxMaterial: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
   splashEmitter: {fileID: 1488289075}
   ambiencePlayerBelowSurface: {fileID: 984002393}
   ambiencePlayerAboveSurface: {fileID: 491479360}
@@ -14397,7 +14440,6 @@ MonoBehaviour:
   fishes: []
   upgrades: []
   depth: 0
-  maxDepth: 10000
   money: 0
 --- !u!114 &2018120449
 MonoBehaviour:
@@ -14872,11 +14914,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: dd7105e077158574c8ca8e584223449f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -180.7
+      value: -131.2
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: dd7105e077158574c8ca8e584223449f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -80.17
+      value: -100.2
       objectReference: {fileID: 0}
     - target: {fileID: 1008296682223931828, guid: dd7105e077158574c8ca8e584223449f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14913,6 +14955,10 @@ PrefabInstance:
     - target: {fileID: 1008296682223931832, guid: dd7105e077158574c8ca8e584223449f, type: 3}
       propertyPath: m_Name
       value: DustCloud2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008296682223931834, guid: dd7105e077158574c8ca8e584223449f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7105e077158574c8ca8e584223449f, type: 3}

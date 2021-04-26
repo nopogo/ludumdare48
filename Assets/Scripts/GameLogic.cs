@@ -2,11 +2,19 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.Experimental.Rendering.Universal;
+
 public class GameLogic : Singleton<GameLogic>{
+
+    const string ExposureVar = "_Exposure";
     
     public Rigidbody submarineRigidbody;
     public ParticleSystem underwaterParticles;
     public ParticleSystem underwaterUnlitParticles;
+
+    public Light directionalLight;
+    public Light2D directionalLight2D;
+    public Material skyboxMaterial;
 
     public StudioEventEmitter splashEmitter;
 
@@ -28,14 +36,15 @@ public class GameLogic : Singleton<GameLogic>{
 
     public float depth  = 0f;
     
-    public float maxDepth = 10000f;
-    public int money = 0;
-    float yLevelUnderwaterStart = 1.2f;
-        
+    
 
+    public int money = 0;
+    
+        
+    [SerializeField]
     public float percentageDown{
         get{
-            return depth / maxDepth;
+            return depth / Settings.maxDepth;
         }
     }
 
@@ -46,8 +55,13 @@ public class GameLogic : Singleton<GameLogic>{
     bool didDiveStart = false;
 
 
+
+
     public override void Awake(){
         base.Awake();
+        Settings.directionalLight2DStartingIntensity = directionalLight2D.intensity;
+        Settings.directionalLightStartingIntensity = directionalLight.intensity;
+        skyboxMaterial.SetFloat(ExposureVar, Settings.startSkyboxMaterialExposure);
         uiLogic = UILogic.instance;
         subStartPos = Sub.instance.transform.position;
         ambiencePlayerAboveSurface.SetActive(true);
@@ -73,9 +87,12 @@ public class GameLogic : Singleton<GameLogic>{
     void Update(){
         depth = -submarineRigidbody.transform.position.y;
         
-        if (depth < yLevelUnderwaterStart){
+        if (depth < Settings.yLevelUnderwaterStart){
             return;
         }
+
+        //Underwater logic
+
         if(diveButtonPressed){
             if(didDiveStart == false){
                 didDiveStart = true;
@@ -87,6 +104,7 @@ public class GameLogic : Singleton<GameLogic>{
             diveEnded?.Invoke();
         }
         UseOxygen();
+        LightingEffects();
         UpdateUI();
     }
 
@@ -96,6 +114,18 @@ public class GameLogic : Singleton<GameLogic>{
             Die();
 
         }
+    }
+
+    void LightingEffects(){
+        directionalLight.intensity = Mathf.Lerp(Settings.directionalLightStartingIntensity, 0f, depth/Settings.noLightDepth);
+        directionalLight2D.intensity = Mathf.Lerp(Settings.directionalLight2DStartingIntensity, 0f, depth/Settings.noLightDepth);
+        skyboxMaterial.SetFloat(ExposureVar, Mathf.Lerp(Settings.startSkyboxMaterialExposure, 0f, depth/Settings.noLightDepth));
+    }
+
+    void ResetLightingEffects(){
+        directionalLight.intensity = Settings.directionalLightStartingIntensity;
+        directionalLight2D.intensity = Settings.directionalLight2DStartingIntensity;
+        skyboxMaterial.SetFloat(ExposureVar, Settings.startSkyboxMaterialExposure);
     }
 
     void Die(){
@@ -112,6 +142,8 @@ public class GameLogic : Singleton<GameLogic>{
             UpdateMoneyUI();
             ApplyUpgrade(upgradeButton.linkedUpgrade);
             upgradeButton.UpgradeBought();
+        }else{
+            FmodAudioTriggerManager.instance.PlayNegativeSound();
         }
     }
 
@@ -161,6 +193,7 @@ public class GameLogic : Singleton<GameLogic>{
 
 
     void OnDiveStopped(){
+        ResetLightingEffects();
         didDiveStart = false;
         depth = 0f;
         submarineRigidbody.isKinematic = true;

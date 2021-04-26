@@ -10,7 +10,7 @@ public class FishSpawner : MonoBehaviour {
     public BoxCollider2D spawnPlane;
     List<GameObject> spawnedFishList = new List<GameObject>();
 
-    float startWaitUntillNextFish = 1f;
+    float startWaitUntillNextFish;
 
     void Start() {
         GameLogic.instance.diveStarted += OnDiveStarted;
@@ -18,6 +18,7 @@ public class FishSpawner : MonoBehaviour {
     }
 
     void OnDissable() {
+        StopCoroutine(SpawnFish());
         GameLogic.instance.diveStarted -= OnDiveStarted;
         GameLogic.instance.diveEnded -= OnDiveEnded;
     }
@@ -53,7 +54,7 @@ public class FishSpawner : MonoBehaviour {
     Fish GetFish(){
         List<Fish> tempFish = new List<Fish>();
         foreach(Fish fish in GameLogic.instance.fishes){
-            if(GameLogic.instance.depth > fish.minDepth){
+            if(GameLogic.instance.depth > fish.minDepth && (fish.maxDepth == 0 || GameLogic.instance.depth < fish.maxDepth)){
                 for (int i = 0; i < fish.spawnWeight; i++){
                     tempFish.Add(fish);
                 }
@@ -66,8 +67,11 @@ public class FishSpawner : MonoBehaviour {
     }
 
     IEnumerator SpawnFish(){
-        float waitUntillNextFish = startWaitUntillNextFish;
-        yield return new WaitForSeconds(waitUntillNextFish);
+        Debug.Log("try to spawn fish");
+        SpawnDepthDelay depthDelay = Settings.GetSpawnDepthDelay(GameLogic.instance.depth);
+        startWaitUntillNextFish = Random.Range(depthDelay.waitInSecondsMin, depthDelay.waitInSecondsMax);
+
+        yield return new WaitForSeconds(startWaitUntillNextFish);
         Fish fishToSpawn = GetFish();
         if(fishToSpawn != null){
             GameObject spawnedFish = Instantiate(fishPrefab, GetSpawnPosition(), Quaternion.identity);
@@ -78,8 +82,9 @@ public class FishSpawner : MonoBehaviour {
             boxColl.isTrigger = true;
             spawnedFish.GetComponent<FishObject>().Initiate(fishToSpawn);
         }
-        
-        StartCoroutine(SpawnFish());
+        if(GameLogic.instance.depth > 0f){
+            StartCoroutine(SpawnFish());
+        }
     }
 
     
