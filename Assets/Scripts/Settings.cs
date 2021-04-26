@@ -50,6 +50,8 @@ public static class Settings {
     public static float noLightDepth = 100f;
     public static float yLevelUnderwaterStart = 1.2f;
 
+    public static float bombDelay = 20f;
+
 
     public static int depthValue   = 0;
     public static int fishValue    = 0;

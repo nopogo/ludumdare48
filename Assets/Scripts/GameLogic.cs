@@ -139,6 +139,11 @@ public class GameLogic : Singleton<GameLogic>{
         skyboxMaterial.SetFloat(ExposureVar, Settings.startSkyboxMaterialExposure);
     }
 
+    public void Bomb(){
+        FmodAudioTriggerManager.instance.PlayBombSound();
+        Die();
+    }
+
     void Die(){
         Settings.failedValue +=1;
         caughtFish = new List<Fish>();

@@ -7,12 +7,17 @@ public class FishSpawner : MonoBehaviour {
     
 
     public GameObject fishPrefab;
+    public GameObject bomb;
     public BoxCollider2D spawnPlane;
     List<GameObject> spawnedFishList = new List<GameObject>();
-
+    List<GameObject> spawnedBombs = new List<GameObject>();
     float startWaitUntillNextFish;
 
+    float timeLastBombSpawned;
+
+
     void Start() {
+        timeLastBombSpawned = Time.time;
         GameLogic.instance.diveStarted += OnDiveStarted;
         GameLogic.instance.diveEnded += OnDiveEnded;
     }
@@ -72,15 +77,21 @@ public class FishSpawner : MonoBehaviour {
 
         yield return new WaitForSeconds(startWaitUntillNextFish);
         Fish fishToSpawn = GetFish();
-        if(fishToSpawn != null){
-            GameObject spawnedFish = Instantiate(fishPrefab, GetSpawnPosition(), Quaternion.identity);
-            spawnedFishList.Add(spawnedFish);
-            spawnedFish.GetComponent<SpriteRenderer>().sprite = fishToSpawn.sprite;
-            BoxCollider2D boxColl = spawnedFish.AddComponent<BoxCollider2D>();
-            boxColl.size = new Vector2(1,1);
-            boxColl.isTrigger = true;
-            spawnedFish.GetComponent<FishObject>().Initiate(fishToSpawn);
+        if(Settings.bombDelay > Time.time - timeLastBombSpawned){
+           spawnedBombs.Add(Instantiate(bomb, GetSpawnPosition(), Quaternion.identity));
+           timeLastBombSpawned = Time.time;
+        }else{
+            if(fishToSpawn != null){
+                GameObject spawnedFish = Instantiate(fishPrefab, GetSpawnPosition(), Quaternion.identity);
+                spawnedFishList.Add(spawnedFish);
+                spawnedFish.GetComponent<SpriteRenderer>().sprite = fishToSpawn.sprite;
+                BoxCollider2D boxColl = spawnedFish.AddComponent<BoxCollider2D>();
+                boxColl.size = new Vector2(1,1);
+                boxColl.isTrigger = true;
+                spawnedFish.GetComponent<FishObject>().Initiate(fishToSpawn);
+            }
         }
+        
         if(GameLogic.instance.depth > 0f){
             StartCoroutine(SpawnFish());
         }

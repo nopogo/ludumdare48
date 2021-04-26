@@ -13,6 +13,11 @@ public class FmodAudioTriggerManager : Singleton<FmodAudioTriggerManager>{
 	FMOD.Studio.EventInstance cashSoundInstance;
 
 
+    [EventRef]
+    public string bombSound;
+	FMOD.Studio.EventInstance bombSoundInstance;
+
+
 
     public override void Awake(){
         base.Awake();
@@ -39,6 +44,10 @@ public class FmodAudioTriggerManager : Singleton<FmodAudioTriggerManager>{
 
     public void PlayNegativeSound(){
         negativeSoundInstance.start();   
+    }
+
+    public void PlayBombSound(){
+        bombSoundInstance.start();
     }
 
    

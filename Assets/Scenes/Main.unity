@@ -17876,6 +17876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6947813014571993546, guid: 0049fd02726dbf0428e577f2bf4f9911, type: 3}
+  bomb: {fileID: 5967551898023700712, guid: 03bc8a71b209a9c44b757634067dd76e, type: 3}
   spawnPlane: {fileID: 1674408173}
 --- !u!1 &2022758852
 GameObject:
